@@ -18,8 +18,3 @@ async def up(host, port):
     server = uvicorn.Server(config=config)
     #server.install_signal_handlers = lambda: None
     await server.serve()
-
-# TODO remove
-class Test:
-    def test(self):
-        print("test")

@@ -1,1 +1,1 @@
-from aimremote.server import Test
+from aimremote.client import Run
