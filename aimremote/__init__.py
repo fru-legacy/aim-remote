@@ -1,1 +1,1 @@
-from aim-remote.server import Test 
+from aimremote.server import Test 
