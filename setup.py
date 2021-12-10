@@ -7,7 +7,9 @@ setup(
     install_requires=[
         'aim',
         'fastapi>=0.65.0,<0.68.0',
-        'click>=7.0'
+        'click>=7.0',
+        'asyncio',
+        'uvicorn'
     ],
     entry_points={
         'console_scripts': [
