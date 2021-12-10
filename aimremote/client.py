@@ -1,8 +1,8 @@
-from aim import Run
+from aim import Run as AimRun
 
 class Run:
     def test(self):
-        my_run = Run(
+        my_run = AimRun(
             repo='/home/administrator/tools',
             experiment='experiment_fru2',
             run_hash='testhash3',
