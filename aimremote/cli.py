@@ -1,6 +1,6 @@
 import click
 import asyncio
-from server import up
+from aimremote.server import up
 
 @click.group()
 def cli():

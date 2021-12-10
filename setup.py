@@ -13,7 +13,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'aimremote=aimremote.cli:cli'
+            'aim-remote=aimremote.cli:cli'
         ],
     },
 )
