@@ -1,6 +1,10 @@
 from aim import Distribution as AimDistribution
+from aim import Image as AimImage
 from torch import tensor
 import numpy as np
+
+# TODO: support image
+# TODO: dont inherit from AimDistribution but convert in server on track
 
 class Distribution(AimDistribution):
     def __init__(self, distribution = tensor([])):
