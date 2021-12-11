@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request
-from aim import Run as AimRun
+from aim import Run as AimRun, Distribution
 import uvicorn
 import pickle
 
@@ -40,10 +40,10 @@ async def track(request: Request, repo: str, run_hash: str, security_token: str,
     for item in items:
         run.track(
             item.get('data'),
-            item.get('name'),
-            item.get('step'),
-            item.get('epoch'),
-            item.get('context'))
+            name=item.get('name'),
+            step=item.get('step'),
+            epoch=item.get('epoch'),
+            context=item.get('context'))
 
 async def up(host, port, security_token):
     global global_security_token
