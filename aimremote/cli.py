@@ -1,6 +1,6 @@
 import click
 import asyncio
-import aim_server
+from .aim_server import *
 
 @click.group()
 def cli():
