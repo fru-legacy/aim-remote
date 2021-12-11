@@ -38,7 +38,12 @@ async def track(request: Request, repo: str, run_hash: str, security_token: str,
     items = pickle.loads(data)
     run = get_run(experiment, repo, run_hash)
     for item in items:
-        run.track(item['data'], item['kwargs'])
+        run.track(
+            item.get('data'),
+            item.get('name'),
+            item.get('step'),
+            item.get('epoch'),
+            item.get('context'))
 
 async def up(host, port, security_token):
     global global_security_token

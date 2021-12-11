@@ -12,22 +12,22 @@ class Run:
         }
 
     def __getitem__(self, key):
-        print(key)
         url = self.url + '/aimremote/get_values/' + key
         return requests.get(url, params=self.params).json()
 
     def __setitem__(self, key, value):
-        print(key, value)
         url = self.url + '/aimremote/set_values/' + key
         requests.post(url, params=self.params, json=value)
 
     def track(self, data, **kwargs):
-        print(data, kwargs)
         url = self.url + '/aimremote/track/'
         encoded = pickle.dumps([
             { 
                 'data': data,
-                'kwargs': kwargs
+                'name': kwargs['name'],
+                'step': kwargs['step'],
+                'epoch': kwargs['epoch'],
+                'context': kwargs['context']
             }
         ])
         requests.post(url, params=self.params, data=encoded)
