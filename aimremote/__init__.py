@@ -1,1 +1,1 @@
-from aim_client import Run
+import aim_client.Run as Run
