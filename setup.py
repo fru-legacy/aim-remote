@@ -17,3 +17,6 @@ setup(
         ],
     },
 )
+
+# Execute locally using:
+# python -m aim-remote.cli up --security-token Passtoken12345
