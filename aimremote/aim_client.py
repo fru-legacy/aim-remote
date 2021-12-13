@@ -2,7 +2,7 @@ import pickle
 import requests
 
 class Run:
-    def __init__(self, url, **kwargs):     
+    def __init__(self, **kwargs):     
         self.url = kwargs['url']
         self.params = {x: kwargs[x] for x in kwargs if x != 'url'}
 
