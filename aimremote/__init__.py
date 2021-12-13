@@ -1,2 +1,2 @@
 from .aim_client import *
-from .objects import *
+from .aim_objects import *

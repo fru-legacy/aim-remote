@@ -9,7 +9,8 @@ setup(
         'fastapi>=0.65.0,<0.68.0',
         'click>=7.0',
         'asyncio',
-        'uvicorn'
+        'uvicorn',
+        'requests'
     ],
     entry_points={
         'console_scripts': [
@@ -20,3 +21,4 @@ setup(
 
 # Execute locally using:
 # python -m aim-remote.cli up --security-token Passtoken12345
+# python ./aimremote/cli.py up --security-token Passtoken12345
