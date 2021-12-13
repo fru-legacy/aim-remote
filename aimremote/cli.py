@@ -1,6 +1,6 @@
 import click
 import asyncio
-from aim_server import *
+from .aim_server import *
 
 @click.group()
 def cli():
@@ -8,7 +8,7 @@ def cli():
 
 @cli.command('up')
 @click.option('-h', '--host', default='0.0.0.0', type=str)
-@click.option('-p', '--port', default=4902, type=int)
+@click.option('-p', '--port', default=4900, type=int)
 @click.option('-t', '--security-token', type=str, required=True)
 def up_command(host, port, security_token):
     asyncio.run(up(host, port, security_token))
