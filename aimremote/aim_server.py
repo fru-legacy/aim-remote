@@ -1,6 +1,5 @@
 import pickle
 from types import SimpleNamespace
-from aim_objects import Image, Distribution
 
 import uvicorn
 from aim import Run as AimRun
@@ -25,12 +24,12 @@ def get_run(experiment: str, repo: str, run_hash: str, security_token: str):
         )
     return run_cache[run_hash]
 
-def track(run, item):
+def aim_track(run, item):
     data = item.data
-    if isinstance(data, Image):
-        data = AimImage(data.image)
-    if isinstance(data, Distribution):
+    if hasattr(data, 'distribution'):
         data = AimDistribution(data.distribution)
+    if hasattr(data, 'image'):
+        data = AimImage(data.image)
     run.track(data,
         name=item.name,
         step=item.step,
@@ -53,7 +52,7 @@ async def track(request: Request, repo: str, run_hash: str, security_token: str,
     data: bytes = await request.body()
     items = pickle.loads(data)
     for item in items:
-        track(run, SimpleNamespace(item))
+        aim_track(run, SimpleNamespace(**item))
 
 async def up(host, port, security_token):
     global global_security_token
