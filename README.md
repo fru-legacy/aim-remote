@@ -23,7 +23,7 @@ my_run = Run(
     experiment='experiment_fru12345',
     run_hash='fru123456',
     security_token = 'Passtoken12345',
-    url = 'http://localhost:4902'
+    url = 'http://localhost:4900'
 )
 
 my_run['hparams'] = {'batch_size': 43}
